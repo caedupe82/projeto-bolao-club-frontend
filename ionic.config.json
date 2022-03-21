@@ -1,0 +1,7 @@
+{
+  "name": "project-bolao-club",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
