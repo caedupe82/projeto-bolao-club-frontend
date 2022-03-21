@@ -1,0 +1,30 @@
+<ion-content padding>
+    <img src="../../assets/imgs/Logo Bolao.png" alt="logo" class="logo logo-login">
+    <ion-list>
+        <ion-item>
+            <ion-label class="label" stacked>E-mail</ion-label>
+            <ion-input type="text" [(ngModel)]="creds.email" name="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="label" stacked>Senha</ion-label>
+            <ion-input type="password" [(ngModel)]="creds.senha" name="senha"></ion-input>
+        </ion-item>
+        <ion-item start>
+            <ion-label>Lembrar usuário</ion-label>
+            <ion-checkbox color="green" [(ngModel)]="lembrarMe"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+    <ion-list no-lines>
+        <ion-item>
+            <button (click)="entrar()" ion-button block class="botao">Entrar</button>
+        </ion-item>
+
+        <ion-item class="possui-login">
+            <p class="bottom">Não possui login?<a tappable id="cadastre-se" (click)="cadastrar()"> Cadastre-se</a> </p>
+        </ion-item>
+
+        <ion-item class="possui-login">
+            <p><a tappable id="esqueceu-senha" (click)="esqueceuSenha()"> Esqueceu sua senha?</a></p>
+        </ion-item>
+    </ion-list>
+</ion-content>

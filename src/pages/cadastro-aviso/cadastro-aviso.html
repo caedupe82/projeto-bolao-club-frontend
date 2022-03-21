@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong class="title">{{ getTitulo() }}</strong>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="formGroup" (ngSubmit)="salvar(); $event.preventDefault()">
+    <ion-list>    
+      <ion-item>
+          <ion-label class="label" stacked>Título</ion-label>
+          <ion-input type="text" formControlName="titulo" maxlength="25" [(ngModel)]="aviso.titulo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Descrição</ion-label>
+        <ion-textarea formControlName="descricao" maxlength="120" [(ngModel)]="aviso.descricao" rows="6" cols="20"></ion-textarea>
+      </ion-item>
+    </ion-list>
+    <ion-list no-lines>
+        <ion-item>
+            <button type="submit" ion-button block class="botao" [disabled]="formGroup.invalid">Salvar</button>
+        </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

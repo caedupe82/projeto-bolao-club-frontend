@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong class="title">Meu Painel</strong>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid *ngIf="painelUsuario != null && painelUsuario.mesReferencia != null">
+    <ion-row>
+      <ion-col col-6 class="titulo-painel titulo-borda mes-referencia">Mês Referência</ion-col>
+      <ion-col col-6 class="titulo-painel titulo-borda valor-cota">Valor Cota</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6 class="valor-borda mes-referencia">{{ painelUsuario.mesReferencia}}</ion-col>
+      <ion-col col-6 class="valor-borda valor-cota">{{ painelUsuario.valorCota | currency:'BRL':true:'1.2-2' }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6 class="titulo-painel titulo-borda abertura-sistema">Abertura Sistema</ion-col>
+      <ion-col col-6 class="titulo-painel titulo-borda fechamento-sistema">Fechamento Sistema</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6 class="valor-borda abertura-sistema">{{ painelUsuario.aberturaSistema }}</ion-col>
+      <ion-col col-6 class="valor-borda fechamento-sistema">{{ painelUsuario.fechamentoSistema }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6 class="titulo-painel titulo-borda primeiro-sorteio">Primeiro Sorteio</ion-col>
+      <ion-col col-6 class="titulo-painel titulo-borda total-participante">Total Participantes</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6 class="valor-borda primeiro-sorteio">{{ painelUsuario.primeiroSorteio }}</ion-col>
+      <ion-col col-6 class="valor-borda total-participante">{{ painelUsuario.totalParticipante }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6 class="titulo-painel titulo-borda premio-principal">Prêmio Principal(20p)</ion-col>
+      <ion-col col-6 class="titulo-painel titulo-borda premio-secundario">Prêmio Secundário(19p)</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6 class="valor-borda premio-principal">{{ painelUsuario.premioPrincipal | currency:'BRL':true:'1.2-2' }}</ion-col>
+      <ion-col col-6 class="valor-borda premio-secundario">{{ painelUsuario.premioSecundario | currency:'BRL':true:'1.2-2' }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6 class="titulo-painel titulo-borda premio-pe-frio">Prêmio Pé Frio</ion-col>
+      <ion-col col-6 class="titulo-painel titulo-borda premio-acumulado">Prêmio Acumulado</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6 class="valor-borda premio-pe-frio">{{ painelUsuario.premioPeFrio | currency:'BRL':true:'1.2-2' }}</ion-col>
+      <ion-col col-6 class="valor-borda premio-acumulado">{{ painelUsuario.premioAcumulado | currency:'BRL':true:'1.2-2' }}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div *ngIf="painelUsuario == null || painelUsuario.mesReferencia == null">
+    <h1 class="nenhum-registro">O administrador ainda não configurou o Painel com as informações desse mês.</h1>
+  </div>
+</ion-content>
+
+<page-tabs></page-tabs>

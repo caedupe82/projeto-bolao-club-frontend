@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong class="title">Listar Participantes</strong>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngIf="listUsuario != null && listUsuario.length > 0">
+      <ion-item *ngFor="let usuario of listUsuario">
+        <h2 [class]="usuario.pagouUltimaMensalidade ? 'pagou' : 'nao-pagou'">{{ usuario.nome }}</h2>
+        <p>{{ usuario.telefone  }}</p>
+      </ion-item>
+  </ion-list>
+
+  <h1 *ngIf="listUsuario == null || listUsuario.length <= 0" class="nenhum-registro">Não possuí nenhum usuário cadastrado.</h1>
+</ion-content>

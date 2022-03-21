@@ -1,0 +1,71 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong class="title">Painel Administrativo</strong>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="formGroup" (ngSubmit)="salvar(); $event.preventDefault()">
+    <ion-list>
+      <ion-item>
+        <ion-label>Mês Referência</ion-label>
+        <ion-select (ionChange)="selecionouValor()" interface="action-sheet" cancelText="Cancelar" okText="Ok" formControlName="mesReferencia" [(ngModel)]="painel.mesReferencia">
+          <div *ngFor="let meses of recuperarMeses">
+              <ion-option [value]="meses.ano">{{ meses.valor }}</ion-option>
+          </div>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>Total de Participantes</ion-label>
+        <ion-input type="number" formControlName="totalParticipantes" [(ngModel)]="painel.totalParticipantes" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>Valor Cota</ion-label>
+        <ion-input formControlName="valorCota" [brmasker]="{money: true}" [(ngModel)]="painel.valorCota"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>Prêmio Principal(%) - {{ getPremioPrincipal() | currency:'BRL':true:'1.2-2' }} </ion-label>
+        <ion-input type="number" formControlName="premioPrincipal" [(ngModel)]="painel.premioPrincipal" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>Prêmio Secundário(%) - {{ getPremioSecundario() | currency:'BRL':true:'1.2-2' }} </ion-label>
+        <ion-input type="number" formControlName="premioSecundario" [(ngModel)]="painel.premioSecundario" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>Prêmio Pé Frio(%) - {{ getPremioPeFrio() | currency:'BRL':true:'1.2-2' }} </ion-label>
+        <ion-input type="number" formControlName="premioPeFrio" [(ngModel)]="painel.premioPeFrio" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>Prêmio Acumulado(R$) </ion-label>
+        <ion-input type="number" formControlName="premioAcumulado" [(ngModel)]="painel.premioAcumulado" required disabled></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>Taxa Administrativa(%) - {{ getTaxaAdministrativa() | currency:'BRL':true:'1.2-2' }} </ion-label>
+        <ion-input type="number" formControlName="taxaAdministrativa" [(ngModel)]="painel.taxaAdministrativa" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>Abertura Sistema</ion-label>
+        <ion-input type="text" formControlName="aberturaSistema" [(ngModel)]="painel.aberturaSistema" required [brmasker]="{mask:'00/00/0000', len:10, type: 'num'}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>Fechamento Sistema</ion-label>
+        <ion-input type="text" formControlName="fechamentoSistema" [(ngModel)]="painel.fechamentoSistema" required [brmasker]="{mask:'00/00/0000', len:10, type: 'num'}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>Primeiro Sorteio</ion-label>
+        <ion-input type="text" formControlName="primeiroSorteio" [(ngModel)]="painel.primeiroSorteio" required [brmasker]="{mask:'00/00/0000', len:10, type: 'num'}"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-list no-lines>
+      <ion-item>
+        <button type="submit" ion-button block class="botao" [disabled]="formGroup.invalid">Salvar</button>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

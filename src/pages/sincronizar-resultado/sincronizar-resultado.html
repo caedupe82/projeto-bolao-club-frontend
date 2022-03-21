@@ -1,0 +1,53 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong class="title">Resultado Manual</strong>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="formGroup" (ngSubmit)="salvar(); $event.preventDefault()">
+    <ion-list>
+      <ion-item>
+        <ion-label class="label" stacked>Nº Concurso</ion-label>
+        <ion-input type="text" formControlName="numeroConcurso" maxlength="6" [brmasker]="{type:'num'}"
+          [(ngModel)]="resultado.numeroConcurso"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>1º Número</ion-label>
+        <ion-input type="text" formControlName="primeiroNumero" maxlength="2" [brmasker]="{type:'num'}"
+          [(ngModel)]="resultado.primeiroNumero"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>2º Número</ion-label>
+        <ion-input type="text" formControlName="segundoNumero" maxlength="2" [brmasker]="{type:'num'}"
+          [(ngModel)]="resultado.segundoNumero"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>3º Número</ion-label>
+        <ion-input type="text" formControlName="terceiroNumero" maxlength="2" [brmasker]="{type:'num'}"
+          [(ngModel)]="resultado.terceiroNumero"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>4º Número</ion-label>
+        <ion-input type="text" formControlName="quartoNumero" maxlength="2" [brmasker]="{type:'num'}"
+          [(ngModel)]="resultado.quartoNumero"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>5º Número</ion-label>
+        <ion-input type="text" formControlName="quintoNumero" maxlength="2" [brmasker]="{type:'num'}"
+          [(ngModel)]="resultado.quintoNumero"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-list no-lines>
+      <ion-item>
+        <button type="submit" ion-button block class="botao" [disabled]="formGroup.invalid">Salvar</button>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

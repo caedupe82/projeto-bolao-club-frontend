@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong class="title">Ranking</strong>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid *ngIf="listRanking != null && listRanking.length > 0">
+    <ion-row>
+      <ion-col col-1 class="titulo-ranking-ou-resultado alinhar-centro titulo-tabela">
+        
+      </ion-col>
+      <ion-col col-3 class="titulo-ranking-ou-resultado alinhar-centro titulo-tabela">
+        Participante
+      </ion-col>
+      <ion-col col-7 class="dezena dezena-sem-borda-esquerda-sem-borda-direita alinhar-centro titulo-tabela">
+        Dezenas Escolhidas
+      </ion-col>
+      <ion-col col-1 class="dezena alinhar-centro titulo-tabela">
+        A
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let r of listRanking; let i = index;">
+      <ion-col col-1 class="titulo-ranking-ou-resultado sem-borda-topo alinhar-centro colocacao">
+        {{ i + 1 }} º
+      </ion-col>
+      <ion-col col-3 class="titulo-ranking-ou-resultado sem-borda-topo alinhar-centro">
+        {{ r.nome }}
+      </ion-col>
+      <ion-col col-7 class="dezena dezena-sem-borda-esquerda-sem-borda-direita sem-borda-topo alinhar-centro">
+        {{ r.numeros }}
+      </ion-col>
+      <ion-col col-1 class="dezena sem-borda-topo alinhar-centro">
+        {{ r.quantidadeAcerto }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div *ngIf="listRanking == null || listRanking.length <= 0">
+    <h1 class="nenhum-registro">Não possuí nenhum ranking nesse mês</h1>
+  </div>
+</ion-content>
+
+<page-tabs></page-tabs>

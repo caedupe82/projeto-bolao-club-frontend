@@ -1,0 +1,70 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong class="title">Resultados</strong>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid *ngIf="listResultado != null && listResultado.length > 0">
+    <ion-row>
+      <ion-col col-2
+        class="titulo-ranking-ou-resultado alinhar-centro titulo-tabela dezena-sem-borda-direita-com-esquerda borda-linha-duas-colunas">
+        Sorteio
+      </ion-col>
+      <ion-col col-5 class="titulo-ranking-ou-resultado alinhar-centro titulo-tabela">
+        Concurso
+      </ion-col>
+      <ion-col col-1 class="dezena dezena-sem-borda-esquerda-sem-borda-direita alinhar-centro titulo-tabela">
+        1D
+      </ion-col>
+      <ion-col col-1 class="dezena dezena-sem-borda-direita-com-esquerda alinhar-centro titulo-tabela">
+        2D
+      </ion-col>
+      <ion-col col-1 class="dezena dezena-sem-borda-direita-com-esquerda alinhar-centro titulo-tabela">
+        3D
+      </ion-col>
+      <ion-col col-1 class="dezena dezena-sem-borda-direita-com-esquerda alinhar-centro titulo-tabela">
+        4D
+      </ion-col>
+      <ion-col col-1 class="dezena alinhar-centro titulo-tabela">
+        5D
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let r of listResultado; let i = index;">
+      <ion-col col-2
+        class="titulo-ranking-ou-resultado sem-borda-topo dezena-sem-borda-direita-com-esquerda borda-linha-duas-colunas">
+        {{ i + 1 }} º
+      </ion-col>
+      <ion-col col-5 class="titulo-ranking-ou-resultado sem-borda-topo alinhar-centro">
+        {{ r.numeroConcurso }}
+      </ion-col>
+      <ion-col col-1 class="dezena dezena-sem-borda-esquerda-sem-borda-direita sem-borda-topo alinhar-centro">
+        {{ r.primeiroNumero }}
+      </ion-col>
+      <ion-col col-1 class="dezena dezena-sem-borda-direita-com-esquerda sem-borda-topo alinhar-centro">
+        {{ r.segundoNumero }}
+      </ion-col>
+      <ion-col col-1 class="dezena dezena-sem-borda-direita-com-esquerda sem-borda-topo alinhar-centro">
+        {{ r.terceiroNumero }}
+      </ion-col>
+      <ion-col col-1 class="dezena dezena-sem-borda-direita-com-esquerda sem-borda-topo alinhar-centro">
+        {{ r.quartoNumero }}
+      </ion-col>
+      <ion-col col-1 class="dezena sem-borda-topo alinhar-centro">
+        {{ r.quintoNumero }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div *ngIf="listResultado == null || listResultado.length <= 0">
+    <h1 class="nenhum-registro">Não possuí nenhum resultado nesse mês</h1>
+  </div>
+</ion-content>
+
+<page-tabs></page-tabs>

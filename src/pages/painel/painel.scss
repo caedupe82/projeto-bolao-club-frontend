@@ -1,0 +1,59 @@
+page-painel {
+
+    .titulo-painel {
+        color: crimson;
+    font-size: 14px;
+    text-align: left;
+    font-weight: 500;
+    }
+
+    .titulo-borda {
+        border-style: groove;
+        border-bottom: 0;
+    }
+
+    .valor-borda {
+        border-style: groove;
+        border-top: 0;
+    }
+
+    .mes-referencia {
+        background: beige;
+    }
+
+    .valor-cota {
+        background: thistle;
+    }
+
+    .abertura-sistema {
+        background: powderblue;
+    }
+
+    .fechamento-sistema {
+        background: lightgray;
+    }
+
+    .primeiro-sorteio {
+        background: lightgreen;
+    }
+
+    .total-participante {
+        background: lightcyan;
+    }
+
+    .premio-principal {
+        background: lightpink;
+    }
+
+    .premio-secundario {
+        background: lightskyblue;
+    }
+
+    .premio-pe-frio {
+        background: lightsteelblue;
+    }
+
+    .premio-acumulado {
+        background: darkseagreen;
+    }
+}

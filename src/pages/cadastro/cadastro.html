@@ -1,0 +1,39 @@
+<ion-content padding>
+  <img src="../../assets/imgs/Logo Bolao.png" alt="logo" class="logo">
+  <form [formGroup]="formGroup" (ngSubmit)="cadastrar(); $event.preventDefault()">
+    <ion-list>
+      <ion-item>
+        <ion-label class="label" stacked>Nome Completo</ion-label>
+        <ion-input type="text" formControlName="nome" maxlength="50" [(ngModel)]="usuario.nome"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>Apelido</ion-label>
+        <ion-input type="text" formControlName="apelido" maxlength="15" [(ngModel)]="usuario.apelido"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>Telefone/Celular (Whatsapp)</ion-label>
+        <ion-input type="text" formControlName="telefone" maxlength="15" [(ngModel)]="usuario.telefone" [brmasker]="{mask:'(00) 00000-0000', len:15, type:'num'}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>E-mail</ion-label>
+        <ion-input type="text" formControlName="email" maxlength="40" [(ngModel)]="usuario.email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>Senha</ion-label>
+        <ion-input type="password" formControlName="senha" maxlength="20" [(ngModel)]="usuario.senha"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label" stacked>Confirmar Senha</ion-label>
+        <ion-input type="password" formControlName="confirmaSenha" maxlength="20" [(ngModel)]="confirmaSenha"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-list no-lines>
+      <ion-item>
+        <button type="submit" ion-button block class="botao" [disabled]="formGroup.invalid">Cadastrar</button>
+      </ion-item>
+      <ion-item>
+        <button type="button" (click)="voltar()" ion-button block class="botao">Voltar</button>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

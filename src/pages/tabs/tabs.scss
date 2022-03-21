@@ -1,0 +1,20 @@
+page-tabs {
+    
+    .tabs {
+        width: 32%;
+        background: lightblue;
+        border: 1px groove gray;
+        font-size: 14px;
+    }
+    
+    .centralizar-footer {
+        display: flex;
+        justify-content: center;
+    }
+
+ @media screen and (min-width: 480px) and (orientation: landscape) {
+    .tabs {
+        display: none !important;
+    }
+ }
+}

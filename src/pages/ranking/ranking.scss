@@ -1,0 +1,24 @@
+page-ranking {
+    .dezena {
+        font-size: 13px;
+        border-style: groove;
+        padding: 0;
+    }
+
+    .dezena-sem-borda-esquerda-sem-borda-direita {
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .dezena-sem-borda-direita-com-esquerda {
+        border-right: 0;
+    }
+
+    .alinhar-centro {
+        text-align: center !important;
+    }
+
+    .colocacao {
+        font-size: 13px !important;
+    }
+}

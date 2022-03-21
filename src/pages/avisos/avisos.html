@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong class="title">Avisos</strong>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list *ngIf="listAviso != null && listAviso.length > 0">
+    <ion-item *ngFor="let aviso of listAviso">
+      <p item-start>{{ aviso.data | date: 'dd/MMM/yyyy HH:mm:ss' }}</p>
+      <p item-end>{{ aviso.descricao }}</p>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="listAviso == null || listAviso.length <= 0">
+    <h1 class="nenhum-registro">Não possuí nenhum aviso no momento.</h1>
+  </div>
+
+</ion-content>
+
+<page-tabs></page-tabs>

@@ -1,0 +1,73 @@
+page-meu-palpite {
+
+    .input-wrapper {
+        display: block !important;
+        text-align: center !important;
+        border: 1px solid black !important;
+        padding: 0px !important;
+        width: 50px !important;
+        height: min-content;
+        max-height: min-content;
+        background: linear-gradient(#649a00, #649a00);
+    }
+
+    .acerto {
+        font-size: 4.6rem !important;
+        color: white;
+    }
+
+    .button-outline-md {
+        border-color: lightslategrey !important;
+        color: lightslategrey !important;
+    }
+
+    .col {
+        padding: 5px;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        min-height: 1px;
+        -webkit-flex-basis: 0;
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -webkit-box-flex: 1;
+        -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%;
+        text-align: center !important;
+    }
+    
+    .row {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        color: white !important;
+    }
+
+    .salvar {
+        height: 57px;
+        background: linear-gradient(#649a00, #649a00);
+        color: white !important;
+        font-size: 15px;
+    }
+
+    .item-md p {
+        font-size: 19px !important;
+        color: white !important;
+        height: 54px !important;
+    }
+
+    .sistema-fechado {
+        font-size: 15px;
+        color: #ff0000;
+        text-align: center;
+        font-weight: bold;
+
+    }
+
+}

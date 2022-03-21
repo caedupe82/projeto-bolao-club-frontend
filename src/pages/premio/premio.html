@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong class="title">Prêmios</strong>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngIf="listPremio != null && listPremio.length > 0">
+    <ion-grid class="borda-grid" *ngFor="let premio of listPremio">
+      <ion-row class="tamanho-font-linha">
+        <ion-col col-6>
+          <h6>Mês Referência:</h6>
+        </ion-col>
+        <ion-col col-6>
+          <h6 class="cor-mes-premio">{{ premio.data }}</h6>
+        </ion-col>
+      </ion-row>
+      <ion-row class="tamanho-font-linha titulo-tabela">
+        <ion-col col-3 class="coluna-com-border-right">Principal 20P</ion-col>
+        <ion-col col-3 class="coluna-com-border-right">Principal 19P</ion-col>
+        <ion-col col-3 class="coluna-com-border-right">Pé Frio</ion-col>
+        <ion-col col-3 class="coluna-sem-border-right">Acumulado</ion-col>
+      </ion-row>
+      <ion-row class="tamanho-font-linha borda-linha">
+        <ion-col col-3 class="coluna-com-border-right">{{ premio.premioPrimeiro | currency:'BRL' }}</ion-col>
+        <ion-col col-3 class="coluna-com-border-right">{{ premio.premioSegundo | currency:'BRL' }}</ion-col>
+        <ion-col col-3 class="coluna-com-border-right">{{ premio.premioPeFrio | currency:'BRL' }}</ion-col>
+        <ion-col col-3 class="coluna-sem-border-right">{{ premio.premioAcumulado | currency:'BRL' }}</ion-col>
+      </ion-row>
+      <ion-row class="tamanho-font-linha borda-linha">
+        <ion-col col-3 class="coluna-com-border-right vencedor">{{ premio.vencedorPrimeiro | nothingWinner }}</ion-col>
+        <ion-col col-3 class="coluna-com-border-right vencedor">{{ premio.vencedorSegundo | nothingWinner }}</ion-col>
+        <ion-col col-3 class="coluna-com-border-right vencedor">{{ premio.vencedorPeFrio | nothingWinner }}</ion-col>
+        <ion-col col-3 class="coluna-sem-border-right vencedor">{{ premio.vencedorAcumulado | nothingWinner }}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div *ngIf="listPremio == null || listPremio.length <= 0">
+    <h1 class="nenhum-registro">Não possuí nenhum prêmio no momento.</h1>
+  </div>
+</ion-content>
+
+<page-tabs></page-tabs>

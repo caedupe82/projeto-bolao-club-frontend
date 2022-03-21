@@ -1,0 +1,39 @@
+<ion-header *ngIf="!validarTermo">
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong class="title">Termos de Uso</strong>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-header *ngIf="validarTermo">
+
+  <ion-navbar>
+    <ion-title>
+      <strong class="title">Termos de Uso</strong>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    
+    <ion-card-content>
+        O Bolão club usa todos os meios à sua disposição para garantir um acesso de qualidade ao serviço, mas não tem obrigação legal de fazê-lo. 
+        Além disso, o Bolão club não pode ser responsabilizada por qualquer mau funcionamento da rede ou servidor, ou qualquer outro evento que escape ao seu controle e que impeça ou afete o acesso ao serviço.
+        O Bolão club se reserva o direito de interromper, suspender temporariamente ou alterar, sem aviso prévio, o acesso à totalidade ou parte do Serviço para a manutenção necessária ou por qualquer outro motivo, sem que esta interrupção dê direito a qualquer obrigação ou indenização.<p></p> 
+
+        <button ion-button class="botao" full *ngIf="validarTermo" (click)="concordo()">Concordo</button>
+        <button ion-button style="background: #ff0000" full *ngIf="validarTermo" (click)="naoConcordo()">Não concordo</button>
+
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
+
+<page-tabs *ngIf="!validarTermo"></page-tabs>

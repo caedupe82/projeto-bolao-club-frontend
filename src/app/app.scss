@@ -1,0 +1,96 @@
+.grid {
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.numero-nao-selecionado {
+    background: lightsteelblue;
+}
+
+.numero-selecionado {
+    background: green;
+}
+
+.cor-acerto {
+    background: indigo;
+}
+
+.cor-nao-acerto {
+    background: red;
+}
+
+[col-2] {
+    width: 15% !important;
+    max-width: 18% !important;
+    text-align: center !important;
+    border: 1px double palegoldenrod !important;
+}
+
+.label {
+    font-size: 1.1em !important;
+    color: #031343 !important;
+}
+
+.possui-login {
+    text-align: center;
+}
+
+.logo {
+    margin-left: 7% !important;
+}
+
+.logo-login {
+    width: 398px !important;
+    margin-left: 3% !important;
+}
+
+.botao {
+    height: 40px !important;
+    background-image: linear-gradient(#649a00, #649a00);
+}
+
+.sem-borda-topo {
+    border-top: 0;
+}
+
+.titulo-ranking-ou-resultado {
+    border-style: groove;
+    padding: 0;
+}
+
+.alinhar-centro {
+    text-align: center;
+}
+
+.titulo-tabela {
+    background: powderblue;
+    color: currentColor;
+}
+
+.editar {
+    background: green;
+    font-weight: bold;
+}
+
+.excluir {
+    background: red;
+    font-weight: bold;
+}
+
+.nenhum-registro {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: darkgreen;
+}

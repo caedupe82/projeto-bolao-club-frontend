@@ -1,0 +1,45 @@
+page-premio {
+
+    .cor-mes-premio {
+        color: red;
+    }
+
+    .tamanho-font-linha {
+        font-size: 10px;
+    }
+
+    .borda-grid {
+        border-style: groove;
+    }
+
+    .titulo-tabela {
+        border: 1px groove !important;
+        background: powderblue !important;
+        color: currentColor !important;
+    }
+
+    .coluna-com-border-right {
+        border: 1px groove;
+        border-left: 0;
+        border-top: 0;
+        border-bottom: 0;
+    }
+
+    .coluna-sem-border-right {
+        border: 1px groove;
+        border-left: 0;
+        border-top: 0;
+        border-bottom: 0;
+        border-right: 0;
+    }
+
+    .borda-linha {
+        border: 1px groove !important;
+    }
+
+    .vencedor {
+        color: rebeccapurple;
+        background: cornsilk;
+        font-weight: 500;
+    }
+}

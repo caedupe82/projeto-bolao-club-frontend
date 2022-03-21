@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong class="title">Meu Palpite</strong>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="grid">
+    <ion-row class="row">
+      <ion-col col-2 class="col" *ngFor="let x of listNumero" [class]="x.selecionado" (click)="selecionarNumero(x)">
+        {{ x.numero }}</ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list>
+    <ion-item>
+      <h1 class="acerto">{{ palpite == null || palpite.quantidadeAcerto == null ? 0 : palpite.quantidadeAcerto }}</h1>
+      <p>Acertos</p>
+      <ion-thumbnail item-end  [hidden]="palpite != null && (palpite.numerosSorteados != null || palpite.fechamentoSistema) ">
+        <button ion-button item-end outline class="salvar" (click)="chamarSalvar()">Salvar Palpite</button>
+      </ion-thumbnail>
+    </ion-item>
+  </ion-list>
+  <p class="sistema-fechado" *ngIf="palpite != null && palpite.fechamentoSistema">Sistema fechado para mudança do Meu Palpite.</p>
+  
+  <ion-card *ngIf="palpite != null && palpite.fechamentoSistema">
+
+    <ion-card-header>
+      Legenda:
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p ><b style="color: lightsteelblue; font-weight: bold;">*</b> Números para selecionar</p>
+      <p><b style="color: green; font-weight: bold;">*</b> Selecionados</p>
+      <p><b style="color: indigo; font-weight: bold;">*</b> Acertos</p>
+      <p><b style="color: red; font-weight: bold;">*</b> Falha</p>
+      <br/>
+    </ion-card-content>
+  
+  </ion-card>
+</ion-content>
+
+<page-tabs></page-tabs>

@@ -1,0 +1,25 @@
+page-resultado {
+    
+    .dezena {
+        font-size: 13px;
+        border-style: groove;
+        padding: 0;
+    }
+
+    .dezena-sem-borda-esquerda-sem-borda-direita {
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .dezena-sem-borda-direita-com-esquerda {
+        border-right: 0;
+    }
+    .dezena-comborda-direita-sem-esquerda{
+        border-left: 0;
+    }
+
+    .borda-linha-duas-colunas {
+        border: 1px groove lightgray !important;
+        border-right: none !important;
+    }
+}

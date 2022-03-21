@@ -1,0 +1,19 @@
+page-avisos {
+
+    .titulo-aviso {
+        font-weight: 500;
+        color: brown;
+        text-align: center;
+    }
+
+    .data {
+        font-style: italic;
+        text-align: right;
+        font-weight: 500;
+    }
+
+    .card-style {
+        background: aliceblue !important;
+        box-shadow: 1px 3px darkgrey;
+    }
+}

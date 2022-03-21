@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong class="title">Listar Avisos</strong>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list *ngIf="listAviso != null && listAviso.length > 0">
+    <ion-item-sliding *ngFor="let aviso of listAviso">
+      <ion-item>
+        <h2>{{ aviso.descricao }}</h2>
+        <p>{{ aviso.data | date: 'dd/MMM/yyyy HH:mm:ss' }}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button class="editar" (click)="editar(aviso.codigo)">
+          <ion-icon name="create"></ion-icon>
+          Atualizar
+        </button>
+        <button ion-button class="excluir" (click)="excluir(aviso.codigo)">
+          <ion-icon name="trash"></ion-icon>
+          Excluir
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <div *ngIf="listAviso == null || listAviso.length <= 0">
+    <h1 class="nenhum-registro">Não possuí nenhum aviso cadastrado.</h1>
+    <button type="submit" ion-button block class="botao" (click)="criarAviso()">Criar novo aviso</button>
+  </div>
+</ion-content>
